@@ -16,6 +16,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setupEvents()
+        setValues()
+
+    }
+
+    fun setupEvents() {
+//        이벤트 처리관련 코드를 모아두는 함수
+        roomListView.setOnItemClickListener { adapterView, view, position, l ->
+
+            val clickedRoom = mRoomList[position]
+
+            val myIntent = Intent( this,ViewRoomDetailActivity::class.java )
+            myIntent.putExtra("room",clickedRoom)
+
+            startActivity(myIntent)
+
+        }
+
+
+   }
+
+    fun setValues() {
+//        화면에 뭔가 보여주기 위한 코드를 모아두는 함수
 
         mRoomList.add( RoomData(8000,"서울시 동대문구", 10, "1번째 방입니다") )
         mRoomList.add( RoomData(18000,"서울시 동대문구", 9, "2번째 방입니다") )
@@ -32,21 +55,10 @@ class MainActivity : AppCompatActivity() {
         mRoomList.add( RoomData(4720,"서울시 동대문구", 0, "13번째 방입니다") )
         mRoomList.add( RoomData(2310,"서울시 서대문구", -1, "14번째 방입니다") )
 
+
         mRoomAdapter = RoomAdapter(this,R.layout.room_list_item, mRoomList)
         roomListView.adapter = mRoomAdapter
 
-        roomListView.setOnItemClickListener { adapterView, view, position, l ->
-
-            val clickedRoom = mRoomList[position]
-
-            val myIntent = Intent( this,ViewRoomDetailActivity::class.java )
-            myIntent.putExtra("room",clickedRoom)
-
-            startActivity(myIntent)
-
-
-        }
-
-
     }
+
 }
