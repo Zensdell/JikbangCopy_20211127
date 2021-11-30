@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+//          실제로 방 데이터 추가
         mRoomList.add( RoomData(8000,"서울시 동대문구", 10, "1번째 방입니다") )
         mRoomList.add( RoomData(18000,"서울시 동대문구", 9, "2번째 방입니다") )
         mRoomList.add( RoomData(25000,"서울시 동대문구", 8, "3번째 방입니다") )
