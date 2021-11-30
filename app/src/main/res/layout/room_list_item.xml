@@ -19,6 +19,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/txtPrice"
             android:textColor="#FFA509"
             android:textStyle="bold"
             android:textSize="23sp"
@@ -27,15 +28,17 @@
             android:text="8,000가격"/>
 
         <TextView
+            android:id="@+id/txtAddressAndFloor"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="서울시 동대문구 1층 (동네/층수)"/>
 
         <TextView
+            android:id="@+id/txtDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="실제 설명 문구구"/>
+            android:text="실제 설명 문구"/>
    </LinearLayout>
 
 </LinearLayout>
